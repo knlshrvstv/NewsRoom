@@ -9,6 +9,14 @@
 import Foundation
 
 class NewsFetcher {
+    enum FetchType {
+        /**
+         * If service vends a TTL or a response unique id,
+         * cache will be supported and this flag will be used
+         */
+        case cacheFirst
+        case networkFirst
+    }
     private let newsStore: NewsStore
     private let newsService: NewsService
     private let translator: Translator
@@ -21,7 +29,8 @@ class NewsFetcher {
         self.translator = translator
     }
     
-    func fetchArticles(language: Language = .english,
+    func fetchArticles(fetchType: FetchType = .networkFirst,
+                       language: Language = .english,
                        successHandler: @escaping (ArticleGroup) -> Void,
                        failureHandler: @escaping (FetchError) -> Void) {
         newsService.fetchArticles(successHandler: { [unowned self] (articles) in
@@ -35,7 +44,6 @@ class NewsFetcher {
             let requiresTranslation = language != articleGroup.language
             if requiresTranslation {
                 self.translate(toLanguage: language, didTranslate: { (group) in
-                    self.newsStore.setArticleGroup(language: group.language, articleGroup: articleGroup)
                     successHandler(group)
                 }) { (error) in
                     failureHandler(error)
