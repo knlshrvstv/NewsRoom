@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B615A2AC238B23B600E7CF0A /* LanguageSwitchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B615A2AB238B23B600E7CF0A /* LanguageSwitchView.swift */; };
 		B63042EA2389EA5F00C37A32 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B63042E92389EA5F00C37A32 /* AppDelegate.swift */; };
 		B63042EC2389EA5F00C37A32 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B63042EB2389EA5F00C37A32 /* SceneDelegate.swift */; };
 		B63042EE2389EA5F00C37A32 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B63042ED2389EA5F00C37A32 /* ViewController.swift */; };
@@ -15,6 +16,7 @@
 		B63042F62389EA6000C37A32 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B63042F42389EA6000C37A32 /* LaunchScreen.storyboard */; };
 		B63043012389EA6000C37A32 /* NewsRoomTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B63043002389EA6000C37A32 /* NewsRoomTests.swift */; };
 		B6304312238A2D4900C37A32 /* Networking in Frameworks */ = {isa = PBXBuildFile; productRef = B6304311238A2D4900C37A32 /* Networking */; };
+		B630431C238A5E4E00C37A32 /* Language.swift in Sources */ = {isa = PBXBuildFile; fileRef = B630431B238A5E4E00C37A32 /* Language.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -28,6 +30,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		B615A2AB238B23B600E7CF0A /* LanguageSwitchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageSwitchView.swift; sourceTree = "<group>"; };
 		B63042E62389EA5F00C37A32 /* NewsRoom.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NewsRoom.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B63042E92389EA5F00C37A32 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B63042EB2389EA5F00C37A32 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -40,6 +43,7 @@
 		B63043002389EA6000C37A32 /* NewsRoomTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsRoomTests.swift; sourceTree = "<group>"; };
 		B63043022389EA6000C37A32 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B630430F238A2D2400C37A32 /* Networking */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Networking; path = ../Networking; sourceTree = "<group>"; };
+		B630431B238A5E4E00C37A32 /* Language.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Language.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,6 +95,8 @@
 				B63042F22389EA6000C37A32 /* Assets.xcassets */,
 				B63042F42389EA6000C37A32 /* LaunchScreen.storyboard */,
 				B63042F72389EA6000C37A32 /* Info.plist */,
+				B630431B238A5E4E00C37A32 /* Language.swift */,
+				B615A2AB238B23B600E7CF0A /* LanguageSwitchView.swift */,
 			);
 			path = NewsRoom;
 			sourceTree = "<group>";
@@ -216,7 +222,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				B63042EE2389EA5F00C37A32 /* ViewController.swift in Sources */,
+				B615A2AC238B23B600E7CF0A /* LanguageSwitchView.swift in Sources */,
 				B63042EA2389EA5F00C37A32 /* AppDelegate.swift in Sources */,
+				B630431C238A5E4E00C37A32 /* Language.swift in Sources */,
 				B63042EC2389EA5F00C37A32 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
