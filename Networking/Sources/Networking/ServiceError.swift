@@ -14,6 +14,7 @@ public enum ServiceError: Error {
     case error(_ error: Error)
     case invalidEndpoint
     case invalidResponse
+    case dataDecodeError
     case unknownError
     case networkError
     case noData
@@ -27,6 +28,8 @@ extension ServiceError: Equatable {
         case (.invalidEndpoint, .invalidEndpoint):
             return true
         case (.invalidResponse, .invalidResponse):
+            return true
+        case (.dataDecodeError, .dataDecodeError):
             return true
         case (.unknownError, .unknownError):
             return true

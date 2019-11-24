@@ -12,6 +12,8 @@ protocol Networkable {
     var urlSession: URLSession { get set }
     func send(request: T,
               completionHandler: @escaping (Result<Data, ServiceError>) -> Void)
+    func fetchAndDecode<U: Decodable>(request: T,
+    completionHandler: @escaping (Result<U, ServiceError>) -> Void)
 }
 
 public class Networker: Networkable {
@@ -54,5 +56,24 @@ public class Networker: Networkable {
                 completionHandler(.success(data))
             }
         }.resume()
+    }
+    
+    public func fetchAndDecode<U: Decodable>(request: HTTPRequest,
+                                             completionHandler: @escaping (Result<U, ServiceError>) -> Void) {
+        send(request: request) { (result) in
+            switch result {
+            case .success(let data):
+                let jsonDecoder = JSONDecoder()
+                jsonDecoder.keyDecodingStrategy = .convertFromSnakeCase
+                do {
+                    let decodedData = try jsonDecoder.decode(U.self, from: data)
+                    completionHandler(.success(decodedData))
+                } catch {
+                    completionHandler(.failure(.dataDecodeError))
+                }
+            case .failure(let error):
+                completionHandler(.failure(error))
+            }
+        }
     }
 }
