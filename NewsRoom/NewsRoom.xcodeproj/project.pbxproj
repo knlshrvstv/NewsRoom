@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -14,6 +14,7 @@
 		B63042F32389EA6000C37A32 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B63042F22389EA6000C37A32 /* Assets.xcassets */; };
 		B63042F62389EA6000C37A32 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B63042F42389EA6000C37A32 /* LaunchScreen.storyboard */; };
 		B63043012389EA6000C37A32 /* NewsRoomTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B63043002389EA6000C37A32 /* NewsRoomTests.swift */; };
+		B6304312238A2D4900C37A32 /* Networking in Frameworks */ = {isa = PBXBuildFile; productRef = B6304311238A2D4900C37A32 /* Networking */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +39,7 @@
 		B63042FC2389EA6000C37A32 /* NewsRoomTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NewsRoomTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B63043002389EA6000C37A32 /* NewsRoomTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsRoomTests.swift; sourceTree = "<group>"; };
 		B63043022389EA6000C37A32 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B630430F238A2D2400C37A32 /* Networking */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Networking; path = ../Networking; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -45,6 +47,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B6304312238A2D4900C37A32 /* Networking in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -61,9 +64,11 @@
 		B63042DD2389EA5F00C37A32 = {
 			isa = PBXGroup;
 			children = (
+				B630430F238A2D2400C37A32 /* Networking */,
 				B63042E82389EA5F00C37A32 /* NewsRoom */,
 				B63042FF2389EA6000C37A32 /* NewsRoomTests */,
 				B63042E72389EA5F00C37A32 /* Products */,
+				B6304310238A2D4900C37A32 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -99,6 +104,13 @@
 			path = NewsRoomTests;
 			sourceTree = "<group>";
 		};
+		B6304310238A2D4900C37A32 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -115,6 +127,9 @@
 			dependencies = (
 			);
 			name = NewsRoom;
+			packageProductDependencies = (
+				B6304311238A2D4900C37A32 /* Networking */,
+			);
 			productName = NewsRoom;
 			productReference = B63042E62389EA5F00C37A32 /* NewsRoom.app */;
 			productType = "com.apple.product-type.application";
@@ -469,6 +484,13 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		B6304311238A2D4900C37A32 /* Networking */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Networking;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = B63042DE2389EA5F00C37A32 /* Project object */;
 }
