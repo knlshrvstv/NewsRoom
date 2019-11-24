@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		B615A2AC238B23B600E7CF0A /* LanguageSwitchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B615A2AB238B23B600E7CF0A /* LanguageSwitchView.swift */; };
+		B615A2AE238B2E1A00E7CF0A /* Translator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B615A2AD238B2E1A00E7CF0A /* Translator.swift */; };
 		B63042EA2389EA5F00C37A32 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B63042E92389EA5F00C37A32 /* AppDelegate.swift */; };
 		B63042EC2389EA5F00C37A32 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B63042EB2389EA5F00C37A32 /* SceneDelegate.swift */; };
 		B63042EE2389EA5F00C37A32 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B63042ED2389EA5F00C37A32 /* ViewController.swift */; };
@@ -35,6 +36,7 @@
 
 /* Begin PBXFileReference section */
 		B615A2AB238B23B600E7CF0A /* LanguageSwitchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageSwitchView.swift; sourceTree = "<group>"; };
+		B615A2AD238B2E1A00E7CF0A /* Translator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Translator.swift; sourceTree = "<group>"; };
 		B63042E62389EA5F00C37A32 /* NewsRoom.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NewsRoom.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B63042E92389EA5F00C37A32 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B63042EB2389EA5F00C37A32 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -109,6 +111,7 @@
 				B630431D238A5E8C00C37A32 /* ArticleGroup.swift */,
 				B630431F238A624800C37A32 /* NewsStore.swift */,
 				B615A2AB238B23B600E7CF0A /* LanguageSwitchView.swift */,
+				B615A2AD238B2E1A00E7CF0A /* Translator.swift */,
 			);
 			path = NewsRoom;
 			sourceTree = "<group>";
@@ -236,6 +239,7 @@
 				B63042EE2389EA5F00C37A32 /* ViewController.swift in Sources */,
 				B615A2AC238B23B600E7CF0A /* LanguageSwitchView.swift in Sources */,
 				B630431E238A5E8C00C37A32 /* ArticleGroup.swift in Sources */,
+				B615A2AE238B2E1A00E7CF0A /* Translator.swift in Sources */,
 				B6304320238A624800C37A32 /* NewsStore.swift in Sources */,
 				B63042EA2389EA5F00C37A32 /* AppDelegate.swift in Sources */,
 				B6304318238A370D00C37A32 /* Article.swift in Sources */,
