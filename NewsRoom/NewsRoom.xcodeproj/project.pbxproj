@@ -20,6 +20,7 @@
 		B6304318238A370D00C37A32 /* Article.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6304317238A370D00C37A32 /* Article.swift */; };
 		B630431C238A5E4E00C37A32 /* Language.swift in Sources */ = {isa = PBXBuildFile; fileRef = B630431B238A5E4E00C37A32 /* Language.swift */; };
 		B630431E238A5E8C00C37A32 /* ArticleGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = B630431D238A5E8C00C37A32 /* ArticleGroup.swift */; };
+		B6304320238A624800C37A32 /* NewsStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = B630431F238A624800C37A32 /* NewsStore.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +51,7 @@
 		B6304317238A370D00C37A32 /* Article.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Article.swift; sourceTree = "<group>"; };
 		B630431B238A5E4E00C37A32 /* Language.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Language.swift; sourceTree = "<group>"; };
 		B630431D238A5E8C00C37A32 /* ArticleGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleGroup.swift; sourceTree = "<group>"; };
+		B630431F238A624800C37A32 /* NewsStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsStore.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +107,7 @@
 				B6304317238A370D00C37A32 /* Article.swift */,
 				B630431B238A5E4E00C37A32 /* Language.swift */,
 				B630431D238A5E8C00C37A32 /* ArticleGroup.swift */,
+				B630431F238A624800C37A32 /* NewsStore.swift */,
 				B615A2AB238B23B600E7CF0A /* LanguageSwitchView.swift */,
 			);
 			path = NewsRoom;
@@ -233,6 +236,7 @@
 				B63042EE2389EA5F00C37A32 /* ViewController.swift in Sources */,
 				B615A2AC238B23B600E7CF0A /* LanguageSwitchView.swift in Sources */,
 				B630431E238A5E8C00C37A32 /* ArticleGroup.swift in Sources */,
+				B6304320238A624800C37A32 /* NewsStore.swift in Sources */,
 				B63042EA2389EA5F00C37A32 /* AppDelegate.swift in Sources */,
 				B6304318238A370D00C37A32 /* Article.swift in Sources */,
 				B6304314238A321100C37A32 /* NewsService.swift in Sources */,
