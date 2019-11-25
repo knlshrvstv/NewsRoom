@@ -18,13 +18,21 @@ class ArticlesViewController: UIViewController {
     // guranteed that this is initialized later and if it not, it will crash during the
     // development phase and hence the issue would be caught, it it comes up.
     private var languageSwitchView: LanguageSwitchView!
+    private var refreshControl = UIRefreshControl()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setupTableView()
+        setupPullToRefresh()
         setupLanguageSwitchView()
         setupView()
         loadArticles()
+    }
+    
+    private func setupPullToRefresh() {
+        refreshControl.attributedTitle = NSAttributedString(string: "Pull to refresh")
+        refreshControl.addTarget(self, action: #selector(refresh), for: UIControl.Event.valueChanged)
+        tableView.addSubview(refreshControl)
     }
     
     private func setupTableView() {
@@ -69,14 +77,21 @@ class ArticlesViewController: UIViewController {
     }
     
     private func loadArticles() {
+        self.refreshControl.beginRefreshing()
         viewModel.loadArticles(didLoad: { [unowned self] in
             DispatchQueue.main.async {
                 self.tableView.reloadData()
+                self.refreshControl.endRefreshing()
             }
         }) { (error) in
             // TODO: Display error
             print(error)
+            self.refreshControl.endRefreshing()
         }
+    }
+    
+    @objc func refresh(sender:AnyObject) {
+        loadArticles()
     }
 }
 

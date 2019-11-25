@@ -8,7 +8,6 @@
 
 import Foundation
 
-
 class NewsStore {
     private var latestLanguageNewsMap: [String: ArticleGroup]
     private let queue = DispatchQueue(label: "NewsStoreQueue", attributes: .concurrent)
