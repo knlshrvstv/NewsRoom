@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import Utilities
 
 class Translator {
     func translate(articleGroup: ArticleGroup, to language: Language) -> ArticleGroup? {

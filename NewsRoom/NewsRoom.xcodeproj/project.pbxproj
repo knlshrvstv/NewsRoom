@@ -11,7 +11,7 @@
 		B615A2AA238B098300E7CF0A /* ArticleDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B615A2A9238B098300E7CF0A /* ArticleDetailViewController.swift */; };
 		B615A2AC238B23B600E7CF0A /* LanguageSwitchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B615A2AB238B23B600E7CF0A /* LanguageSwitchView.swift */; };
 		B615A2AE238B2E1A00E7CF0A /* Translator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B615A2AD238B2E1A00E7CF0A /* Translator.swift */; };
-		B615A2B2238B379E00E7CF0A /* UserDefaults+Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = B615A2B1238B379E00E7CF0A /* UserDefaults+Util.swift */; };
+		B615A2B9238BABE900E7CF0A /* Utilities in Frameworks */ = {isa = PBXBuildFile; productRef = B615A2B8238BABE900E7CF0A /* Utilities */; };
 		B63042EA2389EA5F00C37A32 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B63042E92389EA5F00C37A32 /* AppDelegate.swift */; };
 		B63042EC2389EA5F00C37A32 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B63042EB2389EA5F00C37A32 /* SceneDelegate.swift */; };
 		B63042EE2389EA5F00C37A32 /* ArticlesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B63042ED2389EA5F00C37A32 /* ArticlesViewController.swift */; };
@@ -43,7 +43,7 @@
 		B615A2A9238B098300E7CF0A /* ArticleDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleDetailViewController.swift; sourceTree = "<group>"; };
 		B615A2AB238B23B600E7CF0A /* LanguageSwitchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageSwitchView.swift; sourceTree = "<group>"; };
 		B615A2AD238B2E1A00E7CF0A /* Translator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Translator.swift; sourceTree = "<group>"; };
-		B615A2B1238B379E00E7CF0A /* UserDefaults+Util.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefaults+Util.swift"; sourceTree = "<group>"; };
+		B615A2B7238BAB7A00E7CF0A /* Utilities */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Utilities; path = ../../Utilities; sourceTree = "<group>"; };
 		B63042E62389EA5F00C37A32 /* NewsRoom.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NewsRoom.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B63042E92389EA5F00C37A32 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B63042EB2389EA5F00C37A32 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -70,6 +70,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B6304312238A2D4900C37A32 /* Networking in Frameworks */,
+				B615A2B9238BABE900E7CF0A /* Utilities in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -106,6 +107,7 @@
 		B63042E82389EA5F00C37A32 /* NewsRoom */ = {
 			isa = PBXGroup;
 			children = (
+				B615A2B7238BAB7A00E7CF0A /* Utilities */,
 				B63042E92389EA5F00C37A32 /* AppDelegate.swift */,
 				B63042EB2389EA5F00C37A32 /* SceneDelegate.swift */,
 				B63042ED2389EA5F00C37A32 /* ArticlesViewController.swift */,
@@ -123,7 +125,6 @@
 				B630431F238A624800C37A32 /* NewsStore.swift */,
 				B615A2AB238B23B600E7CF0A /* LanguageSwitchView.swift */,
 				B615A2AD238B2E1A00E7CF0A /* Translator.swift */,
-				B615A2B1238B379E00E7CF0A /* UserDefaults+Util.swift */,
 			);
 			path = NewsRoom;
 			sourceTree = "<group>";
@@ -162,6 +163,7 @@
 			name = NewsRoom;
 			packageProductDependencies = (
 				B6304311238A2D4900C37A32 /* Networking */,
+				B615A2B8238BABE900E7CF0A /* Utilities */,
 			);
 			productName = NewsRoom;
 			productReference = B63042E62389EA5F00C37A32 /* NewsRoom.app */;
@@ -261,7 +263,6 @@
 				B63042EC2389EA5F00C37A32 /* SceneDelegate.swift in Sources */,
 				B630431A238A3D1800C37A32 /* ArticlesViewModel.swift in Sources */,
 				B615A2AA238B098300E7CF0A /* ArticleDetailViewController.swift in Sources */,
-				B615A2B2238B379E00E7CF0A /* UserDefaults+Util.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -522,6 +523,10 @@
 /* End XCConfigurationList section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		B615A2B8238BABE900E7CF0A /* Utilities */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Utilities;
+		};
 		B6304311238A2D4900C37A32 /* Networking */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = Networking;

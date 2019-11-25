@@ -8,9 +8,13 @@
 
 import Foundation
 
-extension UserDefaults {
+public extension UserDefaults {
     struct Key<Value> {
         var name: String
+        
+        public init(name: String) {
+            self.name = name
+        }
     }
     
     subscript<T>(key: Key<T>) -> T? {

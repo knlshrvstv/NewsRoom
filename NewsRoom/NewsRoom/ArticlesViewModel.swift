@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import Utilities
 
 extension UserDefaults.Key {
     static var langaugeSelection: UserDefaults.Key<String> {
