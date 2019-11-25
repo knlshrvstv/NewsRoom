@@ -33,6 +33,7 @@ class NewsFetcher {
                        language: Language = .english,
                        successHandler: @escaping (ArticleGroup) -> Void,
                        failureHandler: @escaping (FetchError) -> Void) {
+        newsStore.clear()
         newsService.fetchArticles(successHandler: { [unowned self] (articles) in
             guard let articleGroup = ArticleGroup(articles: articles, language: .english) else {
                 failureHandler(FetchError.data)

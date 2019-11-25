@@ -27,4 +27,10 @@ class NewsStore {
             return latestLanguageNewsMap[language.rawValue]
         }
     }
+    
+    func clear() {
+        queue.async(flags: .barrier) { [unowned self] in
+            self.latestLanguageNewsMap.removeAll()
+        }
+    }
 }
