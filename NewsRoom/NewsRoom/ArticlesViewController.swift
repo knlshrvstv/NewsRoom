@@ -12,6 +12,8 @@ import Networking
 class ArticlesViewController: UIViewController {
     private let viewModel = ArticlesViewModel()
     private let tableView = UITableView(frame: .zero, style: .plain)
+    private let spinner = SpinnerViewController()
+    private let errorView = ErrorViewController()
     
     // Because UIViewController is initialized through storyboard can't have a custom init,
     // this property has been intentionally made implicitely unwrapped as it is
@@ -19,9 +21,13 @@ class ArticlesViewController: UIViewController {
     // development phase and hence the issue would be caught, it it comes up.
     private var languageSwitchView: LanguageSwitchView!
     private var refreshControl = UIRefreshControl()
-    
+}
+
+// MARK: View
+extension ArticlesViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupErrorView()
         setupTableView()
         setupPullToRefresh()
         setupLanguageSwitchView()
@@ -35,10 +41,15 @@ class ArticlesViewController: UIViewController {
         tableView.addSubview(refreshControl)
     }
     
+    private func setupErrorView() {
+        errorView.delegate = self
+    }
+    
     private func setupTableView() {
         tableView.delegate = self
         tableView.dataSource = self
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "Cell")
+        tableView.rowHeight = UITableView.automaticDimension
+        tableView.register(ArticleListCell.self, forCellReuseIdentifier: ArticleListCell.identifier)
         tableView.tableFooterView = UIView()
     }
     
@@ -49,14 +60,15 @@ class ArticlesViewController: UIViewController {
                     self.tableView.reloadData()
                 }
             }) { (error) in
-                // TODO: Show error
-                print("Show error")
+                DispatchQueue.main.async {
+                    self.refreshControl.endRefreshing()
+                    self.hideSpinner()
+                    self.showError()
+                }
             }
         })
         
-        languageSwitchView = LanguageSwitchView(viewModel: languageSwitchViewModel)
-        
-        languageSwitchView.backgroundColor = .red
+        languageSwitchView = LanguageSwitchView(viewModel: languageSwitchViewModel)        
     }
     
     private func setupView() {
@@ -76,42 +88,82 @@ class ArticlesViewController: UIViewController {
         languageSwitchView.bottomAnchor.constraint(equalTo: guide.bottomAnchor).isActive = true
     }
     
+    private func showSpinner() {
+        addChild(spinner)
+        (spinner).view.frame = view.frame
+        view.addSubview((spinner).view)
+        (spinner).didMove(toParent: self)
+    }
+    
+    private func hideSpinner() {
+        spinner.willMove(toParent: nil)
+        spinner.view.removeFromSuperview()
+        spinner.removeFromParent()
+    }
+    
+    private func showError() {
+        addChild(errorView)
+        (errorView).view.frame = view.frame
+        view.addSubview((errorView).view)
+        (errorView).didMove(toParent: self)
+    }
+    
+    private func hideError() {
+        errorView.willMove(toParent: nil)
+        errorView.view.removeFromSuperview()
+        errorView.removeFromParent()
+    }
+}
+
+// MARK: Data
+extension ArticlesViewController {
     private func loadArticles() {
-        self.refreshControl.beginRefreshing()
+        refreshControl.beginRefreshing()
+        hideError()
+        showSpinner()
         viewModel.loadArticles(didLoad: { [unowned self] in
             DispatchQueue.main.async {
                 self.tableView.reloadData()
                 self.refreshControl.endRefreshing()
+                self.hideSpinner()
             }
         }) { (error) in
-            // TODO: Display error
-            print(error)
-            self.refreshControl.endRefreshing()
+            DispatchQueue.main.async {
+                self.refreshControl.endRefreshing()
+                self.hideSpinner()
+                self.showError()
+            }
         }
     }
     
-    @objc func refresh(sender:AnyObject) {
+    @objc private func refresh(sender:AnyObject) {
         loadArticles()
     }
 }
 
+// MARK: UITableView delegate methods
 extension ArticlesViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
       return viewModel.numberOfRows()
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-      let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
-        let article = viewModel.article(indexPath)
-        cell.textLabel?.text = article?.title
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: ArticleListCell.identifier, for: indexPath) as? ArticleListCell, let article = viewModel.article(indexPath) else { return UITableViewCell() }
+        cell.viewModel = ArticleListCellViewModel(title: article.title, briefDescription: article.body , image: nil)
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let article = viewModel.article(indexPath)
-        
-        let vc = ArticleDetailViewController()
-        navigationController?.pushViewController(vc, animated: true)
+//        let article = viewModel.article(indexPath)
+//        
+//        let vc = ArticleDetailViewController()
+//        navigationController?.pushViewController(vc, animated: true)
+    }
+}
+
+extension ArticlesViewController: ErrorViewDelegate {
+    func didPressRefresh() {
+        loadArticles()
     }
 }
 
