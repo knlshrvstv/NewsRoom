@@ -11,8 +11,11 @@
 		B615A2AA238B098300E7CF0A /* ArticleDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B615A2A9238B098300E7CF0A /* ArticleDetailViewController.swift */; };
 		B615A2AC238B23B600E7CF0A /* LanguageSwitchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B615A2AB238B23B600E7CF0A /* LanguageSwitchView.swift */; };
 		B615A2AE238B2E1A00E7CF0A /* Translator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B615A2AD238B2E1A00E7CF0A /* Translator.swift */; };
+		B615A2B6238BA99000E7CF0A /* ArticleListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B615A2B5238BA99000E7CF0A /* ArticleListCell.swift */; };
 		B615A2B9238BABE900E7CF0A /* Utilities in Frameworks */ = {isa = PBXBuildFile; productRef = B615A2B8238BABE900E7CF0A /* Utilities */; };
 		B615A2BB238CCFD800E7CF0A /* LanguageTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B615A2BA238CCFD800E7CF0A /* LanguageTests.swift */; };
+		B615A2BD238CF40F00E7CF0A /* SpinnerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B615A2BC238CF40F00E7CF0A /* SpinnerViewController.swift */; };
+		B615A2BF238CF6DF00E7CF0A /* ErrorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B615A2BE238CF6DF00E7CF0A /* ErrorViewController.swift */; };
 		B615A2C6238CFBB600E7CF0A /* Styles in Frameworks */ = {isa = PBXBuildFile; productRef = B615A2C5238CFBB600E7CF0A /* Styles */; };
 		B63042EA2389EA5F00C37A32 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B63042E92389EA5F00C37A32 /* AppDelegate.swift */; };
 		B63042EC2389EA5F00C37A32 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B63042EB2389EA5F00C37A32 /* SceneDelegate.swift */; };
@@ -44,8 +47,11 @@
 		B615A2A9238B098300E7CF0A /* ArticleDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleDetailViewController.swift; sourceTree = "<group>"; };
 		B615A2AB238B23B600E7CF0A /* LanguageSwitchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageSwitchView.swift; sourceTree = "<group>"; };
 		B615A2AD238B2E1A00E7CF0A /* Translator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Translator.swift; sourceTree = "<group>"; };
+		B615A2B5238BA99000E7CF0A /* ArticleListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleListCell.swift; sourceTree = "<group>"; };
 		B615A2B7238BAB7A00E7CF0A /* Utilities */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Utilities; sourceTree = "<group>"; };
 		B615A2BA238CCFD800E7CF0A /* LanguageTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageTests.swift; sourceTree = "<group>"; };
+		B615A2BC238CF40F00E7CF0A /* SpinnerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpinnerViewController.swift; sourceTree = "<group>"; };
+		B615A2BE238CF6DF00E7CF0A /* ErrorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorViewController.swift; sourceTree = "<group>"; };
 		B615A2C0238CFA1900E7CF0A /* Styles */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Styles; path = ../Styles; sourceTree = "<group>"; };
 		B63042E62389EA5F00C37A32 /* NewsRoom.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NewsRoom.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B63042E92389EA5F00C37A32 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -129,6 +135,9 @@
 				B630431F238A624800C37A32 /* NewsStore.swift */,
 				B615A2AB238B23B600E7CF0A /* LanguageSwitchView.swift */,
 				B615A2AD238B2E1A00E7CF0A /* Translator.swift */,
+				B615A2B5238BA99000E7CF0A /* ArticleListCell.swift */,
+				B615A2BC238CF40F00E7CF0A /* SpinnerViewController.swift */,
+				B615A2BE238CF6DF00E7CF0A /* ErrorViewController.swift */,
 			);
 			path = NewsRoom;
 			sourceTree = "<group>";
@@ -255,9 +264,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B615A2B6238BA99000E7CF0A /* ArticleListCell.swift in Sources */,
 				B615A2AC238B23B600E7CF0A /* LanguageSwitchView.swift in Sources */,
 				B63042EE2389EA5F00C37A32 /* ArticlesViewController.swift in Sources */,
 				B630431E238A5E8C00C37A32 /* ArticleGroup.swift in Sources */,
+				B615A2BD238CF40F00E7CF0A /* SpinnerViewController.swift in Sources */,
 				B615A2AE238B2E1A00E7CF0A /* Translator.swift in Sources */,
 				B6304320238A624800C37A32 /* NewsStore.swift in Sources */,
 				B63042EA2389EA5F00C37A32 /* AppDelegate.swift in Sources */,
@@ -266,6 +277,7 @@
 				B6304314238A321100C37A32 /* NewsService.swift in Sources */,
 				B630431C238A5E4E00C37A32 /* Language.swift in Sources */,
 				B63042EC2389EA5F00C37A32 /* SceneDelegate.swift in Sources */,
+				B615A2BF238CF6DF00E7CF0A /* ErrorViewController.swift in Sources */,
 				B630431A238A3D1800C37A32 /* ArticlesViewModel.swift in Sources */,
 				B615A2AA238B098300E7CF0A /* ArticleDetailViewController.swift in Sources */,
 			);
