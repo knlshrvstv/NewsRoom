@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import Styles
 
 struct LanguageSwitchViewModel {
     var language: Language
@@ -25,13 +26,13 @@ class LanguageSwitchView: UIView {
         
         super.init(frame: .zero)
         
-        backgroundColor = .green
+        backgroundColor = .lightGray
         
         setupView()
     }
     
     private func setupView() {
-        languageLabel.text = viewModel.language.rawValue
+        languageLabel.text = viewModel.language.rawValue.localizedCapitalized
         languageSwitch.isOn = viewModel.language == .martian
         
         languageSwitch.addTarget(self, action: #selector(switchChangedState), for: UIControl.Event.valueChanged)
@@ -46,10 +47,9 @@ class LanguageSwitchView: UIView {
         let guide = safeAreaLayoutGuide
         
         languageLabel.trailingAnchor.constraint(equalTo: guide.trailingAnchor).isActive = true
-        languageLabel.topAnchor.constraint(equalTo: guide.topAnchor).isActive = true
-        languageLabel.bottomAnchor.constraint(equalTo: guide.bottomAnchor).isActive = true
-        languageLabel.leadingAnchor.constraint(equalTo: languageSwitch.trailingAnchor).isActive = true
-        languageSwitch.leadingAnchor.constraint(equalTo: guide.leadingAnchor).isActive = true
+        languageLabel.centerYAnchor.constraint(equalTo: languageSwitch.centerYAnchor).isActive = true
+        languageLabel.leadingAnchor.constraint(equalTo: languageSwitch.trailingAnchor, constant: Constants.paddingM).isActive = true
+        languageSwitch.leadingAnchor.constraint(equalTo: guide.leadingAnchor, constant: Constants.paddingM).isActive = true
         languageSwitch.topAnchor.constraint(equalTo: guide.topAnchor).isActive = true
         languageSwitch.bottomAnchor.constraint(equalTo: guide.bottomAnchor).isActive = true
     }
@@ -57,7 +57,7 @@ class LanguageSwitchView: UIView {
     @objc func switchChangedState(langSwitch: UISwitch) {
         viewModel.languageChangeAction(langSwitch.isOn ? Language.martian : Language.english)
         viewModel.language = langSwitch.isOn ? Language.martian : Language.english
-        languageLabel.text = viewModel.language.rawValue
+        languageLabel.text = viewModel.language.rawValue.localizedCapitalized
     }
     
     required init?(coder: NSCoder) {
