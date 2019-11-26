@@ -19,7 +19,6 @@
 		B63042EE2389EA5F00C37A32 /* ArticlesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B63042ED2389EA5F00C37A32 /* ArticlesViewController.swift */; };
 		B63042F32389EA6000C37A32 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B63042F22389EA6000C37A32 /* Assets.xcassets */; };
 		B63042F62389EA6000C37A32 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B63042F42389EA6000C37A32 /* LaunchScreen.storyboard */; };
-		B63043012389EA6000C37A32 /* NewsRoomTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B63043002389EA6000C37A32 /* NewsRoomTests.swift */; };
 		B6304312238A2D4900C37A32 /* Networking in Frameworks */ = {isa = PBXBuildFile; productRef = B6304311238A2D4900C37A32 /* Networking */; };
 		B6304314238A321100C37A32 /* NewsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6304313238A321100C37A32 /* NewsService.swift */; };
 		B6304316238A326200C37A32 /* NewsFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6304315238A326200C37A32 /* NewsFetcher.swift */; };
@@ -56,7 +55,6 @@
 		B63042F52389EA6000C37A32 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B63042F72389EA6000C37A32 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B63042FC2389EA6000C37A32 /* NewsRoomTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NewsRoomTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		B63043002389EA6000C37A32 /* NewsRoomTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsRoomTests.swift; sourceTree = "<group>"; };
 		B63043022389EA6000C37A32 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B630430F238A2D2400C37A32 /* Networking */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Networking; path = ../Networking; sourceTree = "<group>"; };
 		B6304313238A321100C37A32 /* NewsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsService.swift; sourceTree = "<group>"; };
@@ -138,7 +136,6 @@
 		B63042FF2389EA6000C37A32 /* NewsRoomTests */ = {
 			isa = PBXGroup;
 			children = (
-				B63043002389EA6000C37A32 /* NewsRoomTests.swift */,
 				B615A2BA238CCFD800E7CF0A /* LanguageTests.swift */,
 				B63043022389EA6000C37A32 /* Info.plist */,
 			);
@@ -278,7 +275,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B63043012389EA6000C37A32 /* NewsRoomTests.swift in Sources */,
 				B615A2BB238CCFD800E7CF0A /* LanguageTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
