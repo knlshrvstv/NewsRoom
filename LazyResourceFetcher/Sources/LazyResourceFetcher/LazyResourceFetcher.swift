@@ -9,12 +9,10 @@
 import Foundation
 import Cache
 
-public struct Identifier<T: Hashable>: Hashable {
-    public let id: T
+public struct Identifier: Hashable {
     public let url: URL
     
-    public init(id: T, url: URL) {
-        self.id = id
+    public init(url: URL) {
         self.url = url
     }
 }
@@ -24,19 +22,33 @@ public enum State {
     case fetching
 }
 
-public protocol LazyResourceFetchable {
-    associatedtype T: Hashable
+public enum Source: Equatable {
+    case cache
+    case service
     
-    func request(resourceFor identifier: Identifier<T>,
-                 completionHandler: @escaping (Data) -> Void)
-    func cancelRequest(for identifier: Identifier<T>)
-    func cancelAllRequests()
-    func state(of identifier: Identifier<T>) -> State
+    public static func ==(lhs: Source, rhs: Source) -> Bool {
+        switch (lhs, rhs) {
+        case (.cache, .cache):
+            return true
+        case (.service, .service):
+            return true
+        default:
+            return false
+        }
+    }
 }
 
-public class LazyResourceFetcher<T: Hashable> {
+public protocol LazyResourceFetchable {    
+    func request(resourceFor identifier: Identifier,
+                 completionHandler: @escaping (Data, Source, Identifier) -> Void)
+    func cancelRequest(for identifier: Identifier)
+    func cancelAllRequests()
+    func state(of identifier: Identifier) -> State
+}
+
+public class LazyResourceFetcher {
     private let queue: OperationQueue
-    private var operationsMap = [Identifier<T>: Operation]()
+    private var operationsMap = [Identifier: Operation]()
     private let cache: Cache<URL, Data>
 
     public init(queue: OperationQueue = OperationQueue(),
@@ -47,18 +59,23 @@ public class LazyResourceFetcher<T: Hashable> {
 }
 
 extension LazyResourceFetcher: LazyResourceFetchable {
-    public func request(resourceFor identifier: Identifier<T>,
-                 completionHandler: @escaping (Data) -> Void) {
+    public func request(resourceFor identifier: Identifier,
+                 completionHandler: @escaping (Data, Source, Identifier) -> Void) {
         if let cachedData = cache[identifier.url] {
-            completionHandler(cachedData)
+            print("cache hit")
+            completionHandler(cachedData, .cache, identifier)
             
+            return
+        }
+        
+        if state(of: identifier) == .fetching {
             return
         }
         
         let operation = ResourceFetchOperation(resourceURL: identifier.url) { [unowned self] (data) in
             self.operationsMap.removeValue(forKey: identifier)
             self.cache[identifier.url] = data
-            completionHandler(data)
+            completionHandler(data, .service, identifier)
         }
         
         operationsMap[identifier] = operation
@@ -66,7 +83,7 @@ extension LazyResourceFetcher: LazyResourceFetchable {
         queue.addOperation(operation)
     }
     
-    public func cancelRequest(for identifier: Identifier<T>) {
+    public func cancelRequest(for identifier: Identifier) {
         operationsMap[identifier]?.cancel()
         operationsMap.removeValue(forKey: identifier)
     }
@@ -76,7 +93,7 @@ extension LazyResourceFetcher: LazyResourceFetchable {
         operationsMap.removeAll()
     }
     
-    public func state(of identifier: Identifier<T>) -> State {
+    public func state(of identifier: Identifier) -> State {
         return operationsMap[identifier] != nil ? State.fetching : State.notFetching
     }
 }
