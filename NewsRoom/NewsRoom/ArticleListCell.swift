@@ -39,7 +39,7 @@ class ArticleListCell: UITableViewCell {
         }
     }
     
-    let titleLabel: UILabel = {
+    private let titleLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.font = UIFont(name: "HelveticaNeue-Bold", size: 28.0)
@@ -48,7 +48,7 @@ class ArticleListCell: UITableViewCell {
         return label
     }()
     
-    let briefDescriptionLabel: UILabel = {
+    private let briefDescriptionLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textAlignment = .left
@@ -59,8 +59,8 @@ class ArticleListCell: UITableViewCell {
         return label
     }()
     
-    let articleImageView: UIImageView = {
-        let imageView = UIImageView()
+    let articleImageView: DynamicImageView = {
+        let imageView = DynamicImageView()
         imageView.translatesAutoresizingMaskIntoConstraints = false
         
         return imageView
@@ -72,7 +72,7 @@ class ArticleListCell: UITableViewCell {
         setupView()
     }
     
-    func setupView() {
+    private func setupView() {
         contentView.addSubview(titleLabel)
         contentView.addSubview(briefDescriptionLabel)
         contentView.addSubview(articleImageView)
