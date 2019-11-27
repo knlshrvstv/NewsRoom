@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		B6148DB4238D7270006BC0D9 /* LazyResourceFetcher in Frameworks */ = {isa = PBXBuildFile; productRef = B6148DB3238D7270006BC0D9 /* LazyResourceFetcher */; };
+		B6148DB6238D8D6B006BC0D9 /* DynamicImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6148DB5238D8D6B006BC0D9 /* DynamicImageView.swift */; };
 		B6148DB9238E333E006BC0D9 /* Cache in Frameworks */ = {isa = PBXBuildFile; productRef = B6148DB8238E333E006BC0D9 /* Cache */; };
 		B615A2A8238B075900E7CF0A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B615A2A7238B075900E7CF0A /* Main.storyboard */; };
 		B615A2AA238B098300E7CF0A /* ArticleDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B615A2A9238B098300E7CF0A /* ArticleDetailViewController.swift */; };
@@ -289,6 +290,7 @@
 				B6304314238A321100C37A32 /* NewsService.swift in Sources */,
 				B630431C238A5E4E00C37A32 /* Language.swift in Sources */,
 				B63042EC2389EA5F00C37A32 /* SceneDelegate.swift in Sources */,
+				B6148DB6238D8D6B006BC0D9 /* DynamicImageView.swift in Sources */,
 				B615A2BF238CF6DF00E7CF0A /* ErrorViewController.swift in Sources */,
 				B630431A238A3D1800C37A32 /* ArticlesViewModel.swift in Sources */,
 				B615A2AA238B098300E7CF0A /* ArticleDetailViewController.swift in Sources */,
