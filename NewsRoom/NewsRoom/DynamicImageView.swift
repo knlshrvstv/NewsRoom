@@ -9,12 +9,13 @@
 import Foundation
 import UIKit
 import Styles
+import LazyResourceFetcher
 
 class DynamicImageView: UIView {
     enum State: Equatable {
         case notLoading
         case loading
-        case loaded(data: Data, width: Int, height: Int)
+        case loaded(data: Data, source: Source)
         
         static func ==(lhs: State, rhs: State) -> Bool {
             switch (lhs, rhs) {
@@ -22,10 +23,9 @@ class DynamicImageView: UIView {
                 return true
             case (.loading, .loading):
                 return true
-            case (let .loaded(data1, width1, height1), let .loaded(data2, width2, height2)):
+            case (let .loaded(data1, source1), let .loaded(data2, source2)):
                 return data1 == data2
-                    && width1 == width2
-                    && height1 == height2
+                    && source1 == source2
             default:
                 return false
             }
@@ -34,6 +34,7 @@ class DynamicImageView: UIView {
     private var imageView: UIImageView = {
         let view = UIImageView()
         view.translatesAutoresizingMaskIntoConstraints = false
+        view.contentMode = .scaleAspectFit
         return view
     }()
     
@@ -42,16 +43,27 @@ class DynamicImageView: UIView {
             guard state != oldValue else { return }
             switch state {
             case .notLoading:
-                backgroundColor = .red
+                // TODO: Placeholder image
+                imageView.image = nil
             case .loading:
-                backgroundColor = .yellow
-            case .loaded(let data, let width, let height):
-                backgroundColor = .clear
-                imageView.contentMode = .scaleAspectFit
-                imageView.image = UIImage(data: data)
+                // TODO: Placeholder image
+                ()
+            case .loaded(let data, let source):
+                switch source {
+                case .cache:
+                    self.imageView.image = UIImage(data: data)
+                case .service:
+                    UIView.transition(with: imageView,
+                                      duration: 0.5,
+                    options: [.curveEaseOut, .transitionCrossDissolve],
+                    animations: {
+                        self.imageView.image = UIImage(data: data)
+                    })
+                }
             }
         }
     }
+    
     init() {
         super.init(frame: .zero)
         
