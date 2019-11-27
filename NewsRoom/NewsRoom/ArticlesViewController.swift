@@ -8,6 +8,8 @@
 
 import UIKit
 import Networking
+import LazyResourceFetcher
+import Styles
 
 class ArticlesViewController: UIViewController {
     private let viewModel = ArticlesViewModel()
@@ -21,6 +23,7 @@ class ArticlesViewController: UIViewController {
     // development phase and hence the issue would be caught, it it comes up.
     private var languageSwitchView: LanguageSwitchView!
     private var refreshControl = UIRefreshControl()
+    private let resourceFetcher: LazyResourceFetcher = LazyResourceFetcher<IndexPath>()
 }
 
 // MARK: View
@@ -78,7 +81,7 @@ extension ArticlesViewController {
         view.addSubview(languageSwitchView)
         let guide = view.safeAreaLayoutGuide
         tableView.topAnchor.constraint(equalTo: guide.topAnchor).isActive = true
-        tableView.bottomAnchor.constraint(equalTo: guide.bottomAnchor, constant: -40).isActive = true
+        tableView.bottomAnchor.constraint(equalTo: guide.bottomAnchor, constant: -Constants.paddingL).isActive = true
         tableView.leadingAnchor.constraint(equalTo: guide.leadingAnchor).isActive = true
         tableView.trailingAnchor.constraint(equalTo: guide.trailingAnchor).isActive = true
         
@@ -126,6 +129,7 @@ extension ArticlesViewController {
                 self.tableView.reloadData()
                 self.refreshControl.endRefreshing()
                 self.hideSpinner()
+                self.loadImagesOnScreen()
             }
         }) { (error) in
             DispatchQueue.main.async {
@@ -139,6 +143,29 @@ extension ArticlesViewController {
     @objc private func refresh(sender:AnyObject) {
         loadArticles()
     }
+    
+    private func loadImagesOnScreen() {
+        guard viewModel.numberOfRows() > 0 else { return }
+        guard let visibleIndexPaths = tableView.indexPathsForVisibleRows else { return }
+        
+        for indexPath in visibleIndexPaths {
+            guard let cell = tableView.cellForRow(at: indexPath) as? ArticleListCell else { return }
+            guard let article = viewModel.article(indexPath) else { return }
+            guard let stringURL = article.images.filter ({ $0.topImage }).first?.url, let url = URL(string: stringURL) else { return }
+            
+            cell.articleImageView.state = .loading
+            resourceFetcher.request(resourceFor: Identifier(id: indexPath, url: url)) { (data) in
+                DispatchQueue.main.async {
+                    cell.articleImageView.state = .loaded(data: data, width: 100, height: 100)
+                }
+            }
+        }
+    }
+    
+    override func didReceiveMemoryWarning() {
+        // resourceFetcher is backed by a NSCache which purges automatically upon receiving memory warning
+        resourceFetcher.cancelAllRequests()
+    }
 }
 
 // MARK: UITableView delegate methods
@@ -149,7 +176,8 @@ extension ArticlesViewController: UITableViewDelegate, UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: ArticleListCell.identifier, for: indexPath) as? ArticleListCell, let article = viewModel.article(indexPath) else { return UITableViewCell() }
-        cell.viewModel = ArticleListCellViewModel(title: article.title, briefDescription: article.body , image: nil)
+        cell.viewModel = ArticleListCellViewModel(title: article.title, briefDescription: article.body, image: nil)
+        
         return cell
     }
     
@@ -158,6 +186,19 @@ extension ArticlesViewController: UITableViewDelegate, UITableViewDataSource {
 //        
 //        let vc = ArticleDetailViewController()
 //        navigationController?.pushViewController(vc, animated: true)
+    }
+}
+
+// Only fetch image if user's scrolling is deaccelerating, meaning that they are soon going to rest on some content on the screen. This is done to prevent extraneous image fetches if they are simply scrolling quickly through the page and not intend to stop at any point during that fast scroll.
+extension ArticlesViewController: UIScrollViewDelegate {
+    func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
+        guard decelerate == false else { return }
+        
+        loadImagesOnScreen()
+    }
+    
+    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+        loadImagesOnScreen()
     }
 }
 
