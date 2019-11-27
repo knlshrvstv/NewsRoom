@@ -175,7 +175,7 @@ extension ArticlesViewController: UITableViewDelegate, UITableViewDataSource {
         tableView.deselectRow(at: indexPath, animated: false)
         let vm = ArticleDetailViewModel(article: article, resourceFetcher: viewModel.resourceFetcher)
         let vc = ArticleDetailViewController(viewModel: vm)
-        navigationController?.pushViewController(vc, animated: false)
+        navigationController?.pushViewController(vc, animated: true)
     }
 }
 
