@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B6148DB4238D7270006BC0D9 /* LazyResourceFetcher in Frameworks */ = {isa = PBXBuildFile; productRef = B6148DB3238D7270006BC0D9 /* LazyResourceFetcher */; };
 		B6148DB9238E333E006BC0D9 /* Cache in Frameworks */ = {isa = PBXBuildFile; productRef = B6148DB8238E333E006BC0D9 /* Cache */; };
 		B615A2A8238B075900E7CF0A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B615A2A7238B075900E7CF0A /* Main.storyboard */; };
 		B615A2AA238B098300E7CF0A /* ArticleDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B615A2A9238B098300E7CF0A /* ArticleDetailViewController.swift */; };
@@ -44,6 +45,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		B6148DB5238D8D6B006BC0D9 /* DynamicImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DynamicImageView.swift; sourceTree = "<group>"; };
 		B6148DB7238E3327006BC0D9 /* Cache */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Cache; path = ../Cache; sourceTree = "<group>"; };
 		B615A2A7238B075900E7CF0A /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		B615A2A9238B098300E7CF0A /* ArticleDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleDetailViewController.swift; sourceTree = "<group>"; };
@@ -72,6 +74,7 @@
 		B630431D238A5E8C00C37A32 /* ArticleGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleGroup.swift; sourceTree = "<group>"; };
 		B630431F238A624800C37A32 /* NewsStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsStore.swift; sourceTree = "<group>"; };
 		B6C93C57238D0E1900084F46 /* Utilities */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Utilities; path = ../Utilities; sourceTree = "<group>"; };
+		B6C93C5D238D71BC00084F46 /* LazyResourceFetcher */ = {isa = PBXFileReference; lastKnownFileType = folder; name = LazyResourceFetcher; path = ../LazyResourceFetcher; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +82,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B6148DB4238D7270006BC0D9 /* LazyResourceFetcher in Frameworks */,
 				B6304312238A2D4900C37A32 /* Networking in Frameworks */,
 				B6C93C59238D0E2500084F46 /* Utilities in Frameworks */,
 				B615A2C6238CFBB600E7CF0A /* Styles in Frameworks */,
@@ -100,6 +104,7 @@
 			isa = PBXGroup;
 			children = (
 				B6148DB7238E3327006BC0D9 /* Cache */,
+				B6C93C5D238D71BC00084F46 /* LazyResourceFetcher */,
 				B6C93C57238D0E1900084F46 /* Utilities */,
 				B615A2C0238CFA1900E7CF0A /* Styles */,
 				B630430F238A2D2400C37A32 /* Networking */,
@@ -142,6 +147,7 @@
 				B615A2B5238BA99000E7CF0A /* ArticleListCell.swift */,
 				B615A2BC238CF40F00E7CF0A /* SpinnerViewController.swift */,
 				B615A2BE238CF6DF00E7CF0A /* ErrorViewController.swift */,
+				B6148DB5238D8D6B006BC0D9 /* DynamicImageView.swift */,
 			);
 			path = NewsRoom;
 			sourceTree = "<group>";
@@ -182,6 +188,7 @@
 				B6304311238A2D4900C37A32 /* Networking */,
 				B615A2C5238CFBB600E7CF0A /* Styles */,
 				B6C93C58238D0E2500084F46 /* Utilities */,
+				B6148DB3238D7270006BC0D9 /* LazyResourceFetcher */,
 				B6148DB8238E333E006BC0D9 /* Cache */,
 			);
 			productName = NewsRoom;
@@ -545,6 +552,10 @@
 /* End XCConfigurationList section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		B6148DB3238D7270006BC0D9 /* LazyResourceFetcher */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = LazyResourceFetcher;
+		};
 		B6148DB8238E333E006BC0D9 /* Cache */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = Cache;
