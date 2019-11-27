@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B6148DB9238E333E006BC0D9 /* Cache in Frameworks */ = {isa = PBXBuildFile; productRef = B6148DB8238E333E006BC0D9 /* Cache */; };
 		B615A2A8238B075900E7CF0A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B615A2A7238B075900E7CF0A /* Main.storyboard */; };
 		B615A2AA238B098300E7CF0A /* ArticleDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B615A2A9238B098300E7CF0A /* ArticleDetailViewController.swift */; };
 		B615A2AC238B23B600E7CF0A /* LanguageSwitchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B615A2AB238B23B600E7CF0A /* LanguageSwitchView.swift */; };
@@ -43,6 +44,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		B6148DB7238E3327006BC0D9 /* Cache */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Cache; path = ../Cache; sourceTree = "<group>"; };
 		B615A2A7238B075900E7CF0A /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		B615A2A9238B098300E7CF0A /* ArticleDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleDetailViewController.swift; sourceTree = "<group>"; };
 		B615A2AB238B23B600E7CF0A /* LanguageSwitchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageSwitchView.swift; sourceTree = "<group>"; };
@@ -80,6 +82,7 @@
 				B6304312238A2D4900C37A32 /* Networking in Frameworks */,
 				B6C93C59238D0E2500084F46 /* Utilities in Frameworks */,
 				B615A2C6238CFBB600E7CF0A /* Styles in Frameworks */,
+				B6148DB9238E333E006BC0D9 /* Cache in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -96,6 +99,7 @@
 		B63042DD2389EA5F00C37A32 = {
 			isa = PBXGroup;
 			children = (
+				B6148DB7238E3327006BC0D9 /* Cache */,
 				B6C93C57238D0E1900084F46 /* Utilities */,
 				B615A2C0238CFA1900E7CF0A /* Styles */,
 				B630430F238A2D2400C37A32 /* Networking */,
@@ -178,6 +182,7 @@
 				B6304311238A2D4900C37A32 /* Networking */,
 				B615A2C5238CFBB600E7CF0A /* Styles */,
 				B6C93C58238D0E2500084F46 /* Utilities */,
+				B6148DB8238E333E006BC0D9 /* Cache */,
 			);
 			productName = NewsRoom;
 			productReference = B63042E62389EA5F00C37A32 /* NewsRoom.app */;
@@ -540,6 +545,10 @@
 /* End XCConfigurationList section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		B6148DB8238E333E006BC0D9 /* Cache */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Cache;
+		};
 		B615A2C5238CFBB600E7CF0A /* Styles */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = Styles;
