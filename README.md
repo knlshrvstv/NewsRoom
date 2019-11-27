@@ -3,9 +3,13 @@ iOS app to show a news feed
 
 # Environment
 Xcode 11.2.1
+
 Deployment target- iOS 13.2
+
 Swift 5
+
 Dependency manager- Swift Package Manager
+
 Version control- Git
 
 # Overview
