@@ -8,6 +8,7 @@
 
 import Foundation
 import Utilities
+import LazyResourceFetcher
 
 extension UserDefaults.Key {
     static var langaugeSelection: UserDefaults.Key<String> {
@@ -19,6 +20,7 @@ class ArticlesViewModel {
     private let newsFetcher: NewsFetcher
     private var articleGroup: ArticleGroup?
     private let userDefaults: UserDefaults
+    let resourceFetcher: LazyResourceFetcher = LazyResourceFetcher()
     
     var language: Language {
         guard let userLanguage = userDefaults[.langaugeSelection] else {
