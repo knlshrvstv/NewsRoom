@@ -29,13 +29,10 @@ class ArticleListCell: UITableViewCell {
     
     var viewModel: ArticleListCellViewModel? {
         didSet {
-            guard viewModel != oldValue else { return }
             titleLabel.text = viewModel?.title
             briefDescriptionLabel.text = viewModel?.briefDescription
             
-            
-            
-            setNeedsLayout()
+            layoutIfNeeded()
         }
     }
     
@@ -87,11 +84,19 @@ class ArticleListCell: UITableViewCell {
         briefDescriptionLabel.leadingAnchor.constraint(equalTo: guide.leadingAnchor, constant: Constants.paddingM).isActive = true
         briefDescriptionLabel.trailingAnchor.constraint(equalTo: guide.trailingAnchor, constant: -Constants.paddingM).isActive = true
         
-        articleImageView.topAnchor.constraint(equalTo: briefDescriptionLabel.bottomAnchor).isActive = true
+        let constraint = articleImageView.topAnchor.constraint(equalTo: briefDescriptionLabel.bottomAnchor)
+        constraint.priority = .defaultLow
+        constraint.isActive = true
         articleImageView.leadingAnchor.constraint(equalTo: guide.leadingAnchor).isActive = true
         articleImageView.trailingAnchor.constraint(equalTo: guide.trailingAnchor).isActive = true
         articleImageView.bottomAnchor.constraint(equalTo: guide.bottomAnchor).isActive = true
         articleImageView.heightAnchor.constraint(equalToConstant: Constants.imageStandardHeight).isActive = true
+    }
+    
+    override func prepareForReuse() {
+        articleImageView.state = .notLoading
+        titleLabel.text = ""
+        briefDescriptionLabel.text = ""
     }
     
     required init?(coder: NSCoder) {
