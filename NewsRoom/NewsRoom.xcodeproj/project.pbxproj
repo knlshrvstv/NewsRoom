@@ -10,6 +10,7 @@
 		B6148DB4238D7270006BC0D9 /* LazyResourceFetcher in Frameworks */ = {isa = PBXBuildFile; productRef = B6148DB3238D7270006BC0D9 /* LazyResourceFetcher */; };
 		B6148DB6238D8D6B006BC0D9 /* DynamicImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6148DB5238D8D6B006BC0D9 /* DynamicImageView.swift */; };
 		B6148DB9238E333E006BC0D9 /* Cache in Frameworks */ = {isa = PBXBuildFile; productRef = B6148DB8238E333E006BC0D9 /* Cache */; };
+		B6148DBB238E54CC006BC0D9 /* ArticleDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6148DBA238E54CC006BC0D9 /* ArticleDetailViewModel.swift */; };
 		B615A2A8238B075900E7CF0A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B615A2A7238B075900E7CF0A /* Main.storyboard */; };
 		B615A2AA238B098300E7CF0A /* ArticleDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B615A2A9238B098300E7CF0A /* ArticleDetailViewController.swift */; };
 		B615A2AC238B23B600E7CF0A /* LanguageSwitchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B615A2AB238B23B600E7CF0A /* LanguageSwitchView.swift */; };
@@ -48,6 +49,7 @@
 /* Begin PBXFileReference section */
 		B6148DB5238D8D6B006BC0D9 /* DynamicImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DynamicImageView.swift; sourceTree = "<group>"; };
 		B6148DB7238E3327006BC0D9 /* Cache */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Cache; path = ../Cache; sourceTree = "<group>"; };
+		B6148DBA238E54CC006BC0D9 /* ArticleDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleDetailViewModel.swift; sourceTree = "<group>"; };
 		B615A2A7238B075900E7CF0A /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		B615A2A9238B098300E7CF0A /* ArticleDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleDetailViewController.swift; sourceTree = "<group>"; };
 		B615A2AB238B23B600E7CF0A /* LanguageSwitchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageSwitchView.swift; sourceTree = "<group>"; };
@@ -133,6 +135,7 @@
 				B63042ED2389EA5F00C37A32 /* ArticlesViewController.swift */,
 				B6304319238A3D1800C37A32 /* ArticlesViewModel.swift */,
 				B615A2A9238B098300E7CF0A /* ArticleDetailViewController.swift */,
+				B6148DBA238E54CC006BC0D9 /* ArticleDetailViewModel.swift */,
 				B63042F22389EA6000C37A32 /* Assets.xcassets */,
 				B63042F42389EA6000C37A32 /* LaunchScreen.storyboard */,
 				B63042F72389EA6000C37A32 /* Info.plist */,
@@ -291,6 +294,7 @@
 				B630431C238A5E4E00C37A32 /* Language.swift in Sources */,
 				B63042EC2389EA5F00C37A32 /* SceneDelegate.swift in Sources */,
 				B6148DB6238D8D6B006BC0D9 /* DynamicImageView.swift in Sources */,
+				B6148DBB238E54CC006BC0D9 /* ArticleDetailViewModel.swift in Sources */,
 				B615A2BF238CF6DF00E7CF0A /* ErrorViewController.swift in Sources */,
 				B630431A238A3D1800C37A32 /* ArticlesViewModel.swift in Sources */,
 				B615A2AA238B098300E7CF0A /* ArticleDetailViewController.swift in Sources */,
