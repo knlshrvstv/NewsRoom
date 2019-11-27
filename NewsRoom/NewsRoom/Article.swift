@@ -27,6 +27,10 @@ struct Article: Codable, Equatable {
         }
     }
     
+    var topImage: Image? {
+        return images.first(where: { $0.topImage })
+    }
+    
     static func ==(lhs: Article, rhs: Article) -> Bool {
         return lhs.title == rhs.title
             && lhs.images == rhs.images
