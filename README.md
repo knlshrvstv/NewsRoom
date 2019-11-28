@@ -16,7 +16,9 @@ Version control- Git
 This project uses Swift packages to seperate out reusable components. The dependency graph looks like the following("->" translates to "is dependent on"):
 
 NewsRoom -> Cache, LazyResourceFetcher, Utilities, Styles, Networking
+
 Cache -> None
+
 LazyResourceFetcher -> Networking, Cache
 
 # Architecture
