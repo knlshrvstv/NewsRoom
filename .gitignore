@@ -68,3 +68,4 @@ fastlane/screenshots/**/*.png
 fastlane/test_output
 *.xcworkspacedata
 /NewsRoom/NewsRoom.xcodeproj/xcshareddata/xcschemes/NewsRoom.xcscheme
+/NewsRoom/.DS_Store
