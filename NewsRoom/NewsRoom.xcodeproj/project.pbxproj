@@ -59,7 +59,7 @@
 		B615A2BC238CF40F00E7CF0A /* SpinnerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpinnerViewController.swift; sourceTree = "<group>"; };
 		B615A2BE238CF6DF00E7CF0A /* ErrorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorViewController.swift; sourceTree = "<group>"; };
 		B615A2C0238CFA1900E7CF0A /* Styles */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Styles; path = ../Styles; sourceTree = "<group>"; };
-		B63042E62389EA5F00C37A32 /* Samachar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Samachar.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		B63042E62389EA5F00C37A32 /* Mukhya Samachar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Mukhya Samachar.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B63042E92389EA5F00C37A32 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B63042EB2389EA5F00C37A32 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		B63042ED2389EA5F00C37A32 /* ArticlesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticlesViewController.swift; sourceTree = "<group>"; };
@@ -121,7 +121,7 @@
 		B63042E72389EA5F00C37A32 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				B63042E62389EA5F00C37A32 /* Samachar.app */,
+				B63042E62389EA5F00C37A32 /* Mukhya Samachar.app */,
 				B63042FC2389EA6000C37A32 /* NewsRoomTests.xctest */,
 			);
 			name = Products;
@@ -196,7 +196,7 @@
 				B6148DB8238E333E006BC0D9 /* Cache */,
 			);
 			productName = NewsRoom;
-			productReference = B63042E62389EA5F00C37A32 /* Samachar.app */;
+			productReference = B63042E62389EA5F00C37A32 /* Mukhya Samachar.app */;
 			productType = "com.apple.product-type.application";
 		};
 		B63042FB2389EA6000C37A32 /* NewsRoomTests */ = {
@@ -460,7 +460,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = KS.Samachar;
-				PRODUCT_NAME = Samachar;
+				PRODUCT_NAME = "Mukhya Samachar";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -481,7 +481,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = KS.Samachar;
-				PRODUCT_NAME = Samachar;
+				PRODUCT_NAME = "Mukhya Samachar";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
