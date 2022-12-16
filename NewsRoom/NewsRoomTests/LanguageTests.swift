@@ -9,7 +9,7 @@
 import Foundation
 
 import XCTest
-@testable import NewsRoom
+@testable import Mukhya_Samachar
 
 class LanguageTests: XCTestCase {
     func testTranslateMartian() {
