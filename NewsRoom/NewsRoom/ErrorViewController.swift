@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 import Styles
 
-protocol ErrorViewDelegate: class {
+protocol ErrorViewDelegate: AnyObject {
     func didPressRefresh()
 }
 
