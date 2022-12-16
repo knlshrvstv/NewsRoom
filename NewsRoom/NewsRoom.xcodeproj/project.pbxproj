@@ -452,12 +452,14 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = CBHP6G9QDW;
 				INFOPLIST_FILE = NewsRoom/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = Samachar;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.news";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = KS.NewsRoom;
+				PRODUCT_BUNDLE_IDENTIFIER = KS.Samachar;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -471,12 +473,14 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = CBHP6G9QDW;
 				INFOPLIST_FILE = NewsRoom/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = Samachar;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.news";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = KS.NewsRoom;
+				PRODUCT_BUNDLE_IDENTIFIER = KS.Samachar;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
